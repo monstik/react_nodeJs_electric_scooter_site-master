@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'ProximaNova-Semibold';
+    src: url('../../fonts/ProximaNova-Semibold.woff2') format('woff2'),
+    url('../../fonts/ProximaNova-Semibold.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova-Bold';
+    src: url('../../fonts/ProximaNova-Bold.woff2') format('woff2'),
+    url('../../fonts/ProximaNova-Bold.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+.garantBlock {
+    background: url("../../imagess/garant.png") no-repeat center top;
+    min-height: 860px;
+    position: relative;
+    top: -20px;
+
+    padding: 190px 0 0 0;
+}
+
+.garantContant {
+    float: right;
+    width: 100%;
+    max-width: 550px;
+}
+
+.garantTitle {
+    font-size: 44px;
+    letter-spacing: 0.5px;
+    font-family: 'ProximaNova-Bold';
+    margin-bottom: 63px;
+}
+
+.garantTitle span {
+    color: #7d29c8;
+}
+
+.garantText {
+    font-size: 24px;
+    margin: 0 0 100px 0;
+}
+
+
+.blue__botton {
+    border: none;
+    background: #5457c1;
+    display: block;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: 'ProximaNova-Semibold';
+    text-align: center;
+    width: 100%;
+    max-width: 422px;
+    height: 69px;
+    line-height: 69px;
+    border-radius: 5px;
+    color: #FFF !important;
+    text-decoration: none !important;
+    letter-spacing: 0.5px;
+    box-shadow: 0px 8px 18px rgba(84, 87, 193, 0.3);
+    transition: 0.4s;
+}
+
+.blue__botton:hover {
+    background-color: #f94673;
+    color: #FFF;
+    transform: scale(1.1);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.blue__botton:visited {
+    color: #FFF;
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .garantBlock {
+        top: 0px;
+    }
+
+    .garantBlock {
+        background-size: cover;
+
+        padding: 40px 0 0 0;
+    }
+
+    .garantContant {
+        max-width: 390px;
+    }
+
+    .garantTitle {
+        font-size: 32px;
+        line-height: 32px;
+        margin-bottom: 30px;
+    }
+
+    .garantText {
+        margin-bottom: 30px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .garantBlock {
+        background: none;
+        padding: 40px 0 20px 0;
+        min-height: 400px;
+
+    }
+
+    .garantContant {
+        max-width: inherit;
+        float: none;
+    }
+
+    .garantText {
+        font-size: 20px;
+    }
+}

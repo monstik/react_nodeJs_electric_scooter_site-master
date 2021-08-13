@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'ProximaNovaT-Thin';
+    src: url('../../fonts/ProximaNovaT-Thin.woff2') format('woff2'),
+    url('../../fonts/ProximaNovaT-Thin.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova-Light';
+    src: url('../../fonts/ProximaNova-Light.woff2') format('woff2'),
+    url('../../fonts/ProximaNova-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+.servisOrder {
+    padding: 55px 0 70px 0;
+    background: #dde7f6;
+}
+
+.soList {
+    background: url(../../imagess/line.png) no-repeat 350px center;
+}
+
+.soList:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.soItem {
+    min-height: 200px;
+    padding: 0 45px 0 45px;
+    position: relative;
+    float: left;
+}
+
+.soItemNum {
+
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: -15px;
+
+    text-align: center;
+    background: url(../../imagess/circle.png) no-repeat;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    line-height: 60px;
+    box-shadow: 0px 0px 100px rgba(249, 70, 115, 0.08);
+    font-family: 'ProximaNovaT-Thin';
+    color: #FFF;
+    font-size: 20px;
+}
+
+.soItemText {
+    position: relative;
+    padding: 40px 30px 10px 30px;
+    min-height: 240px;
+    background: #f4f5fe;
+    box-shadow: 0px 0px 100px rgba(249, 70, 115, 0.08);
+    width: 240px;
+    font-size: 22px;
+    display: flex;
+    font-family: 'ProximaNova-Light';
+}
+
+.sectionTitle {
+    font-size: 44px;
+    text-align: center;
+    letter-spacing: .5px;
+    margin-bottom: 55px;
+}
+
+@media screen and (max-width: 1200px) {
+    .soList {
+        background: url(../../imagess/line.png) no-repeat 200px center;
+    }
+
+    .soItemText {
+        padding: 60px 15px 10px 15px;
+        width: 200px;
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    .soList {
+        background: none;
+        text-align: center;
+    }
+
+    .soItemText {
+        min-height: 150px;
+        padding: 60px 15px 10px 15px;
+        width: 205px;
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .soItem {
+        float: none;
+        display: inline-block;
+        margin-bottom: 30px;
+
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .sectionTitle {
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 30px;
+    }
+
+
+}

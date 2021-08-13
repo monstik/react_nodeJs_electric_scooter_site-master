@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'ProximaNova-Light';
+    src: url('../../../fonts/ProximaNova-Light.woff2') format('woff2'),
+    url('../../../fonts/ProximaNova-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+
+
+.contactLine {
+    padding: 30px 0 0 0;
+}
+
+.logo {
+    grid-area: logo;
+
+}
+
+.phone {
+    grid-area: phone;
+}
+
+.formButton {
+    grid-area: btn;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template: "logo phone btn";
+}
+
+.siteLogo {
+    float: left;
+}
+
+.topSlogan {
+    float: left;
+    margin: 0 0 0 35px;
+    font-size: 16px;
+    line-height: 22px;
+    width: 100%;
+    max-width: 220px;
+    padding: 0 0 0 12px;
+    border-left: #7d29c8 solid 1px;
+    font-family: 'ProximaNova-Light';
+    position: relative;
+}
+
+
+/*.phoneNumber:hover {*/
+/*    transform: scale(1.1);*/
+/*    transition: 0.4s;*/
+/*}*/
+
+.description {
+
+}
+
+.phone__number__link a{
+    color: slateblue;
+    transform: scale(1);
+
+        /*text-decoration: none;*/
+    font-size: 25px;
+    /*transform: scale(1);*/
+}
+.phone__number__link:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.phone__number__link a:hover{
+    color: #c6439d;
+
+}
+
+
+
+.descriptionText {
+    font-size: 14px;
+    display: inline-block;
+
+}
+
+@media screen and (max-width: 1200px) {
+    .topSlogan {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .gridContainer {
+        grid-template: "logo logo"
+                        "phone btn";
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .phone {
+        margin-bottom: 20px;
+    }
+
+    .formButton {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .test {
+        margin: 0 8px 0 7px;
+    }
+
+    .gridContainer {
+        grid-template: "logo"
+                       "phone"
+                        "btn";
+    }
+
+    .siteLogo {
+        float: none;
+        margin: 0 auto 8px auto;
+        display: block;
+        text-align: center;
+    }
+
+
+    .topSlogan {
+        float: none;
+        border: none;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .phoneNumber {
+        text-align: center;
+    }
+
+    .description {
+        text-align: center;
+    }
+
+}
+
+

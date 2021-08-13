@@ -1,0 +1,229 @@
+@font-face {
+    font-family: 'ProximaNova-Semibold';
+    src: url('../../fonts/ProximaNova-Semibold.woff2') format('woff2'),
+    url('../../fonts/ProximaNova-Semibold.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova-Black';
+    src: url('../../fonts/ProximaNova-Black.woff2') format('woff2'),
+    url('../../fonts/ProximaNova-Black.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'ProximaNova-Bold';
+    src: url('../../fonts/ProximaNova-Bold.woff2') format('woff2'),
+    url('../../fonts/ProximaNova-Bold.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+a{
+    text-decoration: none;
+}
+
+.redirectToGMaps{
+    padding-top: 5px;
+}
+
+.redirectToGMaps a{
+    font-size: 12px;
+    text-decoration: revert;
+    color: fuchsia;
+
+}
+.mapBlock {
+    background-color: #bec9f9;
+    min-height: 500px;
+    padding: 40px 15px 40px 15px;
+
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mapBlockGrid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    grid-template-areas: "description map ";
+}
+
+.mapItem {
+    grid-area: map;
+}
+
+.mapItemContainer {
+    margin-left: 50px;
+}
+
+
+.mapStyle {
+    /*width="600" height="450" style="border:0;"*/
+    width: 100%;
+    height: 450px;
+    border: 0;
+    position: absolute;
+
+}
+
+.mapBlockItems {
+    min-height: 490px;
+
+    /*display: flex;*/
+
+}
+
+
+.mapAddress{
+    font-size: 15px;
+    color: slateblue;
+    font-family: ProximaNova-Bold;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.mapInfoItem {
+    grid-area: description;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 210px;
+    border-radius: 8px;
+    padding: 10px 15px 20px 15px;
+
+
+    /*position: relative;*/
+
+    z-index: 6;
+
+    /*margin: 175px 174px 0 0;*/
+    color: #FFF;
+}
+
+.map-sotsial {
+
+}
+
+.map-sotsial a {
+    color: #FFF;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.map-tell {
+    font-size: 24px;
+    color: #FFF !important;
+    text-decoration: none;
+    display: block;
+    margin-top: 15px;
+}
+
+.map-tell span {
+    font-family: 'ProximaNova-Bold';
+}
+
+.map-mail {
+    font-size: 24px;
+    color: #FFF !important;
+    text-decoration: none;
+    display: block;
+    font-family: 'ProximaNova-Bold';
+    margin-bottom: 20px;
+}
+
+.map-link {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    color: #2e2e2e !important;
+    font-size: 14px;
+    font-family: 'ProximaNova-Semibold';
+    text-decoration: none !important;
+    text-transform: uppercase;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background: #ffffff;
+    letter-spacing: 0.5px;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+}
+
+.map-link:hover {
+    text-decoration: none !important;
+    color: #FFF !important;
+    background: #f94673;
+}
+.isVisible{
+    padding: 0;
+    margin: 0;
+
+}
+
+@media screen and (min-width: 1200px){
+    .isVisible{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px ) {
+    .mapItemContainer {
+        margin-left: 15px;
+    }
+    .isVisibleInverted{
+        display: none;
+    }
+    .mapInfoItem{
+        padding-top: 50px;
+        grid-template-columns: 1fr;
+    }
+
+    .blockContentContainer{
+        width: 260px;
+    }
+}
+
+
+@media screen and (max-width: 1060px) {
+    .mapBlockGrid {
+
+        grid-template-areas: 'map'
+                             'description';
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .mapBlock {
+        padding: 0;
+    }
+
+    .mapInfoItem {
+        padding-left: 50px;
+
+    }
+
+
+}
+
+@media screen and (max-width: 992px) {
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .mapBlockGrid {
+
+    }
+
+    .workDaysBlock2 {
+        display: none;
+    }
+    .blockContentContainer{
+        width: 240px;
+    }
+}
+

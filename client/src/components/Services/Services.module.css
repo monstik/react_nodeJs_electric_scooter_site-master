@@ -1,0 +1,243 @@
+.servis {
+    padding: 10px 0 65px 0;
+}
+
+.sectionTitle {
+    font-size: 44px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-bottom: 55px;
+}
+
+.servisLine {
+
+}
+
+.servisTab {
+
+}
+
+ul.tabs {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    max-width: 475px;
+    float: left;
+    box-shadow: 0px 0px 50px rgba(51, 58, 69, 0.3);
+    background: #FFF;
+    border-radius: 8px;
+
+}
+
+.tabs li {
+    padding: 17px 0px 17px 80px;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+}
+
+.tabs li span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+}
+
+.tabs li i {
+    font-size: 14px;
+    color: #8b40ce;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 65px;
+}
+
+.tabs li:hover {
+
+}
+
+.tabs li.current {
+    background: linear-gradient(to bottom, #8b40ce, #c6439d);
+    border-radius: 8px;
+    color: #fff;
+    width: 505px;
+    left: -15px;
+    padding-left: 95px;
+    padding-right: 0px;
+}
+
+.tabs li.current i {
+    color: #FFF;
+}
+
+.servisLine:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.servisLineL {
+    padding: 30px 0px 10px 0;
+    float: left;
+    width: 50%;
+}
+
+.servisLineL:hover {
+    background: rgba(154, 188, 244, 0.2);
+    border-radius: 10px;
+}
+
+.servisItem {
+    max-width: 570px;
+    width: 100%;
+    padding: 0 20px 0 0;
+    float: right;
+    min-height: 160px;
+}
+
+.servisItemImg {
+    float: left;
+    width: 82px;
+    height: 82px;
+    border-radius: 41px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #f7f8fa;
+}
+
+.servisLineL:hover .servisItemImg {
+    background-color: #e8eafe;
+    background-position: center bottom;
+}
+
+.servisItemCont {
+    margin: 0 0 0 110px;
+    position: relative;
+}
+
+.servisItemText {
+    font-size: 22px;
+    line-height: 28px;
+    min-height: 130px;
+    padding-bottom: 5px;
+}
+
+.servisItemText span {
+    font-family: 'ProximaNova-Bold';
+    display: block;
+    margin-top: 8px;
+}
+
+.servisItem a {
+    font-size: 18px;
+    color: #7d29c8;
+    font-family: 'ProximaNova-Bold';
+    border-bottom: #e3d7f2 solid 1px;
+}
+
+.servisItem a:hover {
+    text-decoration: none;
+    border-bottom: transparent solid 1px;
+}
+
+.servisLineR {
+    padding: 30px 10px 19px 0;
+    float: right;
+    width: 50%;
+}
+
+.servisLineR:hover {
+    background-color: rgba(154, 188, 244, 0.2);
+}
+
+.servisLineR .servisItem {
+    padding: 0 0px 0 80px;
+    float: left;
+}
+
+.servisLineR:hover {
+    background-color: rgba(154, 188, 244, 0.2);
+}
+
+.servisLineR:hover .servisItemImg {
+    background-color: #e8eafe;
+    background-position: center bottom;
+}
+
+.servisOrder {
+    padding: 55px 0 70px 0;
+    background: #dde7f6;
+}
+
+
+@media screen and (max-width: 992px) {
+    ul.tabs {
+        max-width: 360px;
+    }
+
+    .tabs li {
+        padding: 4px 10px 4px 10px !important;
+    }
+
+    .tabs li.current {
+        width: 100%;
+        left: 0px;
+    }
+
+    .tabs li i {
+        margin: 0 0 0 25px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    ul.tabs {
+        max-width: 100%;
+        float: none;
+        margin-bottom: 20px;
+    }
+
+    .tabs li {
+        padding: 4px 10px 4px 10px !important;
+        display: inline-block;
+        width: 32%;
+        left: 0px;
+        float: none;
+        vertical-align: middle;
+        margin: 0px;
+        font-size: 14px;
+    }
+
+    .tabs li.current {
+        width: 32%;
+        left: 0px;
+    }
+
+    .tabs li i {
+        display: none;
+    }
+
+    .tabs li span {
+        max-width: inherit;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .tabs li {
+        padding: 3px 5px 3px 5px !important;
+        display: inline-block;
+        width: 49%;
+        left: 0px;
+        float: none;
+        vertical-align: middle;
+        margin: 0px;
+        font-size: 13px;
+    }
+
+    .tabs li.current {
+        width: 49%;
+        left: 0px;
+    }
+
+}

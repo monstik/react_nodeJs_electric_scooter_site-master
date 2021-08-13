@@ -1,0 +1,47 @@
+.revsBlock{
+    background:#dde7f6;
+    border-top:#eef1fd solid 25px;
+    padding:52px 0 70px 0;
+    text-align: center;
+}
+.revsTitle{
+    font-size: 44px;
+    line-height: 44px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.revPhoto{
+    max-height: 147px;
+    margin-bottom: 45px;
+}
+.revText{
+    position: relative;
+    padding:20px 85px 20px 85px;
+    font-size: 22px;
+    margin-bottom: 50px;
+}
+.revText:after{
+    content: "";
+    display: block;
+    position: absolute;
+    background: url(../../imagess/note1.png) no-repeat;
+    width: 43px;
+    height: 35px;
+    top: 0px;
+    left: 15px;
+}
+.revText:before{
+    content: "";
+    display: block;
+    position: absolute;
+    background: url(../../imagess/note2.png) no-repeat;
+    width: 43px;
+    height: 35px;
+    bottom: 0px;
+    right: 15px;
+}
+.revName{
+    color: #7d29c8;
+    font-size: 24px;
+    font-family: 'ProximaNova-Bold';
+}

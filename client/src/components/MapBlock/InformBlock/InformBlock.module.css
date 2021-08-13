@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'ProximaNova-Semibold';
+    src: url('../../../fonts/ProximaNova-Semibold.woff2') format('woff2'),
+    url('../../../fonts/ProximaNova-Semibold.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova-Bold';
+    src: url('../../../fonts/ProximaNova-Bold.woff2') format('woff2'),
+    url('../../../fonts/ProximaNova-Bold.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    grid-area: icon;
+}
+
+.title {
+    font-size: 20px;
+    grid-area: name;
+}
+
+.description {
+    padding-top: 10px;
+    grid-area: descriptionText;
+}
+
+.viber {
+    color: #8b40ce;
+    font-family: 'ProximaNova-Bold';
+    font-size: 20px;
+}
+
+.descriptionPhone {
+    text-decoration: none;
+    font-family: 'ProximaNova-Bold';
+    font-size: 20px;
+}
+
+
+.contactInformationBlock {
+    font-family: 'ProximaNova-Semibold';
+    color: black;
+    padding-right: 20px;
+
+}
+
+.contactInformationBlock {
+    font-family: 'ProximaNova-Semibold';
+    color: black;
+    padding-right: 20px;
+
+}
+
+.contactInformation {
+    font-size: 20px;
+    padding-bottom: 10px;
+
+}
+
+.contactInformationList {
+    padding: 0;
+    list-style: none;
+}
+
+.contactInformationItem {
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: .1fr 1fr;
+
+    grid-template-areas: 'icon name'
+                         'descriptionText descriptionText';
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+    .contactInformation{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .contactInformation{
+        text-align: center;
+        font-size: 25px;
+    }
+}

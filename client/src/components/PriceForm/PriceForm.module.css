@@ -1,0 +1,217 @@
+@font-face {
+    font-family: 'ProximaNova-Semibold';
+    src: url('../../fonts/ProximaNova-Semibold.woff2') format('woff2'),
+    url('../../fonts/ProximaNova-Semibold.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+.priseForm {
+    padding: 60px 0 70px 0;
+}
+
+.formBlock {
+    background: url(../../imagess/form-bg.jpg) no-repeat;
+    padding: 42px 27px 59px 27px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+    color: #FFF;
+    text-align: center;
+
+    min-height: 460px;
+    background-size: cover;
+
+}
+
+.formBlock input {
+    padding: 0;
+}
+
+.formBlock input::placeholder {
+    padding-left: 10px;
+}
+
+.formBlock input[type="tel"] {
+    margin-bottom: 17px;
+}
+
+/*.pf-form .form-block{
+    background:url(../imagess/form-bg.jpg) no-repeat;
+    min-height:460px;
+    background-size:cover;
+    border-radius:8px;
+}*/
+
+.pfForm {
+    float: right;
+    max-width: 475px;
+    width: 100%;
+    margin: 15px 0 0 0;
+    /* background: url(../../imagess/form-bg.jpg) no-repeat;
+     min-height: 460px;
+     background-size: cover;
+     border-radius: 8px;*/
+}
+
+.formBlock textarea {
+    padding: 20px 0 0 0 ;
+    margin-bottom: 20px;
+}
+
+/*.formBlock textarea::placeholder{
+    padding-top: 20px;
+}*/
+
+.priseForm:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.pfLeft {
+    width: 100%;
+    max-width: 585px;
+    float: left;
+}
+
+.pfLeftTitle {
+    font-size: 44px;
+    padding: 0 30px 0 0;
+}
+
+.pfLeftTitle:after {
+    content: "";
+    display: block;
+    background: #9754d3;
+    width: 190px;
+    height: 1px;
+    margin: 25px 0 22px 0;
+}
+
+.pfLeftText {
+    font-size: 24px;
+    padding: 0 30px 0 0;
+    font-family: 'ProximaNova-Semibold';
+}
+
+.pfLeftText2 {
+    font-size: 22px;
+    margin: 62px 0 74px 0;
+    position: relative;
+    padding: 0 40px 0 0;
+}
+
+.pfLeftText2 span {
+    display: block;
+}
+
+.pfLeftText2:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: url(../../imagess/arrow.png) no-repeat;
+    width: 97px;
+    height: 25px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.sendButton {
+    font-size: 24px;
+    color: #2e2e2e;
+    border: none;
+    font-family: 'ProximaNova-Semibold';
+    background: #FFF;
+    letter-spacing: 0.5px;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    padding: 20px 90px;
+    border-radius: 5px;
+}
+
+.sendButton:hover {
+    text-decoration: none;
+    color: #FFF;
+    background: #f94673;
+}
+
+@media screen and (max-width: 1200px) {
+    .pfForm {
+        max-width: 340px;
+    }
+
+    .sendButton {
+        font-size: 20px;
+        padding: 20px 40px;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    .pfForm {
+        max-width: 310px;
+    }
+
+    .pfLeft {
+        max-width: 370px;
+    }
+
+    .pfLeftTitle {
+        font-size: 30px;
+        line-height: 32px;
+        padding: 0px;
+    }
+
+    .pfLeftText {
+        font-size: 20px;
+    }
+
+    .pfLeftText2 {
+        font-size: 18px;
+    }
+
+    .sendButton {
+        font-size: 20px;
+        padding: 20px 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .formBlock {
+        padding: 25px 10px 25px 10px;
+    }
+
+    .pfLeft {
+        max-width: inherit;
+        float: none;
+    }
+
+    .pfLeftText2 {
+        margin: 22px 0 24px 0;
+    }
+
+    .pfLeftText2:after {
+        transform: rotate(90deg);
+        bottom: 25px;
+        right: -30px;
+    }
+
+    .pfForm {
+        max-width: inherit;
+        float: none;
+        margin: 35px 0 0 0;
+    }
+
+    .sendButton {
+        font-size: 20px;
+        padding: 20px 100px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .sendButton {
+        padding: 20px 80px;
+    }
+}
