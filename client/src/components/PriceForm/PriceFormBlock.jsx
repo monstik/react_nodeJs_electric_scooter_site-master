@@ -1,7 +1,8 @@
 import React, {useState} from "react";
-import style from './PriceForm.module.css';
+import style from './PriceFormBlock.module.css';
+import PriceForm from "../Forms/PriceForm/PriceForm";
 
-const PriceForm = () => {
+const PriceFormBlock = () => {
 
     const [state, setState] = useState('');
 
@@ -25,18 +26,7 @@ const PriceForm = () => {
 
                 </div>
                 <div className={style.pfForm}>
-                    <div className={style.formBlock}>
-                        <form onSubmit={handleSubmit}>
-                            <textarea placeholder=" Вкpатцe oпишитe пpoблeму" name="text">
-
-                            </textarea>
-                            <input type="tel" name="phone" placeholder="Номер телефона для связи" required=""/>
-                            <button type="submit"
-                                    className={style.sendButton}>Узнать
-                                стоимость
-                            </button>
-                        </form>
-                    </div>
+                   /<PriceForm/>
                 </div>
             </div>
         </div>
@@ -45,4 +35,4 @@ const PriceForm = () => {
 };
 
 
-export default PriceForm;
+export default PriceFormBlock;

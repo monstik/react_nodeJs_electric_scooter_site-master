@@ -3,7 +3,7 @@ import style from './RepairForm.module.css';
 import ContactTypeSelect from "../../conponents/ContactTypeSelect/ContactTypeSelect";
 
 
-const RepairForm = ({isSubmit}) => {
+const UniversalForm = ({isSubmit}) => {
 
     const [phone, setPhone] = useState('');
     const [name, setName] = useState('');
@@ -35,16 +35,16 @@ const RepairForm = ({isSubmit}) => {
             if(regV2.test(String(e.target.value))){
                 setNameError('Уберите пробелы в начале или конце строки')
             } else {
-            if (!regV.test(String(e.target.value))) {
-                setNameError('Поле должно содержать только быквы')
-            } else {
-                if (e.target.value.length > 40) {
-                    setNameError('Максимальная длинна текста - 30символов')
+                if (!regV.test(String(e.target.value))) {
+                    setNameError('Поле должно содержать только быквы')
                 } else {
+                    if (e.target.value.length > 40) {
+                        setNameError('Максимальная длинна текста - 30символов')
+                    } else {
 
-                    setNameError('');
+                        setNameError('');
+                    }
                 }
-            }
             }
         } else {
             setNameError('Это поле не может быть пустым')
@@ -149,4 +149,4 @@ const RepairForm = ({isSubmit}) => {
 };
 
 
-export default RepairForm;
+export default UniversalForm;

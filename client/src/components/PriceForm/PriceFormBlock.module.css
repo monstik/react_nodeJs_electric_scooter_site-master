@@ -10,30 +10,9 @@
     padding: 60px 0 70px 0;
 }
 
-.formBlock {
-    background: url(../../imagess/form-bg.jpg) no-repeat;
-    padding: 42px 27px 59px 27px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
-    color: #FFF;
-    text-align: center;
 
-    min-height: 460px;
-    background-size: cover;
 
-}
 
-.formBlock input {
-    padding: 0;
-}
-
-.formBlock input::placeholder {
-    padding-left: 10px;
-}
-
-.formBlock input[type="tel"] {
-    margin-bottom: 17px;
-}
 
 /*.pf-form .form-block{
     background:url(../imagess/form-bg.jpg) no-repeat;
@@ -53,10 +32,6 @@
      border-radius: 8px;*/
 }
 
-.formBlock textarea {
-    padding: 20px 0 0 0 ;
-    margin-bottom: 20px;
-}
 
 /*.formBlock textarea::placeholder{
     padding-top: 20px;
@@ -116,37 +91,12 @@
     bottom: 0px;
 }
 
-.sendButton {
-    font-size: 24px;
-    color: #2e2e2e;
-    border: none;
-    font-family: 'ProximaNova-Semibold';
-    background: #FFF;
-    letter-spacing: 0.5px;
-    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 50px;
-    transition: 0.3s;
-    text-transform: uppercase;
-    padding: 20px 90px;
-    border-radius: 5px;
-}
 
-.sendButton:hover {
-    text-decoration: none;
-    color: #FFF;
-    background: #f94673;
-}
 
 @media screen and (max-width: 1200px) {
     .pfForm {
         max-width: 340px;
     }
-
-    .sendButton {
-        font-size: 20px;
-        padding: 20px 40px;
-    }
-
 }
 
 @media screen and (max-width: 992px) {

@@ -5,7 +5,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import FeedBack from "./components/FeedBack/FeedBack";
 import Warranty from "./components/Warranty/Warranty.";
-import PriceForm from "./components/PriceForm/PriceForm";
+import PriceFormBlock from "./components/PriceForm/PriceFormBlock";
 import ServisOrder from "./components/ServisOrder/ServisOrder";
 import MapBlock from "./components/MapBlock/MapBlock";
 import Services from "./components/Services/Services";
@@ -19,7 +19,7 @@ function App() {
             <Header/>
             <ServisOrder/>
             <Services/>
-            <PriceForm/>
+            <PriceFormBlock/>
             <Warranty/>
             <FeedBack/>
             {/*пока нету интернета можно выключать гугл карту */}

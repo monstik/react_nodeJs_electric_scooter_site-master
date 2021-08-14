@@ -4,25 +4,25 @@ import './ContactTypeSelect.css';
 
 
 const data = [
-    {value: 'перевоните мне', label: 'перевоните мне'},
-    {value: 'написать в Viber', label: 'перевоните в Viber'},
+    {value: 'перезвоните мне', label: 'перезвоните мне'},
+    {value: 'написать в Viber', label: 'написать в Viber'},
     {value: 'написать в Telegram', label: 'написать в Telegram'},
     {value: 'написать в WatsApp', label: 'написать в WatsApp'},
 
 ];
 
 
-const ContactTypeSelect = () => {
+const ContactTypeSelect = ({onChange}) => {
     return (
         <Select
             options={data}
             defaultValue={data[0]}
+            onChange={onChange}
             className="react-select__custom"
             classNamePrefix={'react-select'}
             isSearchable={false}
 
         />
-
 
     );
 };
