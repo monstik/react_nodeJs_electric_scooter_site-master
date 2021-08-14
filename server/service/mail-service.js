@@ -5,28 +5,31 @@ dotENV.config();
 
 class MailService {
     constructor() {
+
         this.transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
-            port: 465,
+            host: process.env.SMTP_HOST,
+            port: process.env.SMTP_PORT,
             secure: true,
             auth: {
 
-                user: 'd.krawets2026@gmail.com',
-                pass: '25022001rLd',
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASSWORD,
             }
         })
     }
 
     async sendFormOnMail(name, phoneNumber){
         try {
+
             await this.transporter.sendMail({
-                from: 'd.krawets2026@gmail.com',
-                to: 'd.krawets2026@gmail.com',
+                from: process.env.SMTP_USER,
+                to: process.env.SMTP_USER,
                 subject: 'заявка на ремонт',
                 text: 'заявка на ремонт от ' + phoneNumber + ' ' + name,
                 html:''
             })
         }catch(e){
+
             console.log('ошибка')
             console.log(e)
         }

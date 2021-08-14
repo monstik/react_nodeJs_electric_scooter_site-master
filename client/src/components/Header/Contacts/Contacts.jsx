@@ -4,19 +4,30 @@ import ReactModal from "../../conponents/ReactModal/ReactModal";
 import SalesForm from "../../Forms/SalesForm/SalesForm";
 import Button from "../../conponents/Button/Button";
 import RepairForm from "../../Forms/RepairForm/RepairForm";
+import SubmitFormSuccess from "../../conponents/SubmitFormSuccess/SubmitFormSuccess";
 
 
 const Contacts = (props) => {
 
     const [modalIsOpen, setIsOpen] = useState(false);
+    const [formSubmit, setFormSubmit] = useState(false);
+
+    console.log(formSubmit);
+
 
     const openModal = () => {
         setIsOpen(true);
+        setFormSubmit(false);
     };
 
     const closeModal = () => {
         setIsOpen(false);
+
     };
+
+    const submitForm = (isSubmit) =>{
+        setFormSubmit(isSubmit);
+    }
 
     return (
         <div className={style.contactLine}>
@@ -49,7 +60,10 @@ const Contacts = (props) => {
             </div>
             <ReactModal isOpen={modalIsOpen}
                         onRequestClose={closeModal}>
-                <RepairForm/>
+
+                {formSubmit ?
+                    <SubmitFormSuccess/>:
+                <RepairForm isSubmit={submitForm}/>}
             </ReactModal>
         </div>
     );

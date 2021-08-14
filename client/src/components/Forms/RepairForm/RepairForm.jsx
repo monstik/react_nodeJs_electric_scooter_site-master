@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import style from './RepairForm.module.css';
+import ContactTypeSelect from "../../conponents/ContactTypeSelect/ContactTypeSelect";
 
 
-const RepairForm = () => {
+const RepairForm = ({isSubmit}) => {
 
     const [phone, setPhone] = useState('');
     const [name, setName] = useState('');
@@ -39,7 +40,7 @@ const RepairForm = () => {
     const phoneHandler = (e) => {
         const regV = /^([+]?[0-9\s-\(\)]{7,14})*$/i;
         setPhone(e.target.value);
-        if (e.target.value.length > 0 ) {
+        if (e.target.value.length > 0) {
             if (!regV.test(String(e.target.value))) {
                 setPhoneError('Некорректный номер телефона');
             } else {
@@ -66,10 +67,21 @@ const RepairForm = () => {
         }
     }, [nameError, phoneError]);
 
-    const test = () =>{
-        setNameDirty(true);
-        setPhoneDirty(true);
+
+    const onSubmitForm = (e) => {
+        e.preventDefault();
+        if (!formValid) {
+            setNameDirty(true);
+            setPhoneDirty(true);
+
+            isSubmit(false);
+        } else {
+
+            isSubmit(true);
+        }
+
     }
+
 
     return (
 
@@ -77,10 +89,8 @@ const RepairForm = () => {
         <div className={style.form__block}>
             <div className={style.form__title}>Заказать peмoнт</div>
             <div className={style.form__text}>С Гаpантией дo 3 месяцев!</div>
-            <form>
-                {(nameDirty && nameError) && <label style={{color: 'red'}}>
-                    {nameError}
-                </label>}
+            <form onSubmit={onSubmitForm}>
+
                 <input
                     value={name}
                     onBlur={e => blurHandler(e)}
@@ -88,9 +98,13 @@ const RepairForm = () => {
                     type="text"
                     placeholder="Как вас зoвут?"
                     name="name"/>
-                {(phoneDirty && phoneError) && <label style={{color: 'red'}}>
-                    {phoneError}
-                </label>}
+                <div className={style.validation__field}>
+                    {(nameDirty && nameError) && <label>
+                        {nameError}
+                    </label>}
+                </div>
+
+
                 <input
                     value={phone}
                     onBlur={e => blurHandler(e)}
@@ -99,17 +113,20 @@ const RepairForm = () => {
                     type="tel"
                     placeholder="Номер телефона для связи"
                     name="phone"/>
+                <div className={style.validation__field}>
+                    {(phoneDirty && phoneError) && <label>
+                        {phoneError}
+                    </label>}
+                </div>
+                <ContactTypeSelect/>
                 <button
-                    disabled={!formValid}
+
+                    // disabled={!formValid}
                     type="submit"
 
                     className={style.send__button}>Заказать ремонт
                 </button>
-                <div className="form-chek">
-                    <input type="checkbox" id="c1" checked=""/>
-                    <label htmlFor="c1"><span></span></label>
-                    Сoгласиe на oбpабoтку пepсoнальных данных
-                </div>
+
             </form>
         </div>
 

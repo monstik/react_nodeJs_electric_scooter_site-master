@@ -16,28 +16,21 @@ function App() {
 
     return (
         <>
-            <Header id="section1"/>
+            <Header/>
             <ServisOrder/>
             <Services/>
             <PriceForm/>
             <Warranty/>
             <FeedBack/>
             {/*пока нету интернета можно выключать гугл карту */}
-            <MapBlock/>
+            {/*<MapBlock/>*/}
 
             <Footer/>
 
             <a href="javascript://" data-fancybox="" data-src="#lb-thank" className="thank-link">11</a>
             <div >
 
-                <div className="litebox-form lb-thank" id="lb-thank">
-                    <div className="form-block">
-                        <div className="form-title">спасибo!</div>
-                        <div className="form-text">Ваша заявка пpинята.<br/>В скopoм вpeмeни наш<br/>спeциалист пoзвoнит
-                            Вам.
-                        </div>
-                    </div>
-                </div>
+
 {/*
 
                 <div className="litebox-form lb-master" id="lb-master">

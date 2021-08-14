@@ -1,0 +1,54 @@
+.box{
+
+    width:475px;
+    border-radius: 10px;
+    background:url(../../../imagess/thank-form.png) no-repeat center center;
+    background-size:cover;
+    min-height:inherit;
+
+    opacity:0; /*Элемент полностью прозрачный (невидимый)*/
+
+    animation: show .8s 1; /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+}
+
+
+
+.submit__style{
+
+    padding:42px 27px 59px 27px;
+    border-radius:8px;
+    box-shadow:0px 0px 50px rgba(0,0,0,0.3);
+    color:#FFF;
+    text-align:center;
+
+
+}
+@keyframes show{
+    0%{ opacity:0; }
+    100% { opacity:1; }
+}
+.submit__title{
+    font-size:30px;
+    text-transform:uppercase;
+    font-family: 'ProximaNova-Bold';
+    margin-bottom:23px;
+}
+.submit__text{
+    margin-bottom:45px;
+    font-size:24px;
+    font-family: 'ProximaNova-Semibold';
+    color: #FFF;
+}
+
+@media screen and (max-width: 520px) {
+    .box{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .box{
+        width: 350px;
+    }
+}

@@ -44,8 +44,8 @@ const NavBar = () => {
                         offset={-70}
                         duration={500}>
                         Написать директору<
-                    /Link><
-                    /li>
+                    /Link>
+                </li>
                 <li>
                     <Link
                         to="warranty"

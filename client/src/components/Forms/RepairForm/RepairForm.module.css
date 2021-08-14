@@ -34,7 +34,7 @@
 }
 
 .form__block input{
-    margin-bottom: 17px;
+
     box-sizing: border-box
 }
 
@@ -59,7 +59,17 @@
     background: #f94673;
 }
 
+.validation__field{
+    height: 20px;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
 
+.validation__field label{
+    color: yellow;
+
+}
 
 @media screen and (max-width: 768px){
     .form__block{

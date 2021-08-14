@@ -31,9 +31,14 @@
 
 .soItem {
     min-height: 200px;
-    padding: 0 45px 0 45px;
+    /*padding: 0 45px 0 45px;*/
+    margin: 0 45px 0 45px;
     position: relative;
     float: left;
+    background: #f4f5fe;
+    box-shadow: 0px 0px 100px rgba(249, 70, 115, 0.08);
+    border-radius: 30px;
+
 }
 
 .soItemNum {
@@ -41,15 +46,16 @@
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: -15px;
+    margin-top: 15px ;
 
     text-align: center;
-    background: url(../../imagess/circle.png) no-repeat;
+    background:  url(../../imagess/circle.png) no-repeat;
+
     width: 60px;
     height: 60px;
     border-radius: 30px;
     line-height: 60px;
-    box-shadow: 0px 0px 100px rgba(249, 70, 115, 0.08);
+   /* box-shadow: 0px 0px 100px rgba(249, 70, 115, 0.08);*/
     font-family: 'ProximaNovaT-Thin';
     color: #FFF;
     font-size: 20px;
@@ -57,14 +63,14 @@
 
 .soItemText {
     position: relative;
-    padding: 40px 30px 10px 30px;
-    min-height: 240px;
+    padding: 10px 30px 10px 30px;
+    min-height: 200px;
     background: #f4f5fe;
-    box-shadow: 0px 0px 100px rgba(249, 70, 115, 0.08);
     width: 240px;
     font-size: 22px;
     display: flex;
     font-family: 'ProximaNova-Light';
+    border-radius: 30px;
 }
 
 .sectionTitle {
@@ -80,7 +86,7 @@
     }
 
     .soItemText {
-        padding: 60px 15px 10px 15px;
+        padding: 10px 15px 10px 15px;
         width: 200px;
         font-size: 18px;
     }
@@ -95,7 +101,7 @@
 
     .soItemText {
         min-height: 150px;
-        padding: 60px 15px 10px 15px;
+        padding: 10px 15px 10px 15px;
         width: 205px;
         font-size: 18px;
         text-align: left;

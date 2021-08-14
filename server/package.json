@@ -12,9 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-plugin-dotenv-import": "^2.2.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "joi": "^17.4.2",
     "nodemailer": "^6.6.3"
   },
   "devDependencies": {
