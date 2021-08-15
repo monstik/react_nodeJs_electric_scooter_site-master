@@ -84,6 +84,10 @@
 
 }
 
+.form__container{
+    width: 500px;
+}
+
 @media screen and (max-width: 1200px) {
     .topSlogan {
         margin-left: 10px;
@@ -112,6 +116,10 @@
 @media screen and (max-width: 520px) {
     .test {
         margin: 0 8px 0 7px;
+    }
+
+    .form__container{
+        width: auto;
     }
 
     .gridContainer {

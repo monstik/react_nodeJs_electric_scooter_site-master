@@ -5,6 +5,7 @@ import SalesForm from "../../Forms/SalesForm/SalesForm";
 import Button from "../../conponents/Button/Button";
 import RepairForm from "../../Forms/RepairForm/RepairForm";
 import SubmitFormSuccess from "../../conponents/SubmitFormSuccess/SubmitFormSuccess";
+import UniversalForm from "../../Forms/UniмersalForm/UniversalForm";
 
 
 const Contacts = (props) => {
@@ -25,7 +26,7 @@ const Contacts = (props) => {
 
     };
 
-    const submitForm = (isSubmit) =>{
+    const submitForm = (isSubmit) => {
         setFormSubmit(isSubmit);
     }
 
@@ -58,12 +59,23 @@ const Contacts = (props) => {
                     </div>
                 </div>
             </div>
-            <ReactModal isOpen={modalIsOpen}
-                        onRequestClose={closeModal}>
+            <ReactModal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}>
 
                 {formSubmit ?
-                    <SubmitFormSuccess/>:
-                <RepairForm isSubmit={submitForm}/>}
+                    <SubmitFormSuccess/> :
+                    <div className={style.form__container}>
+
+
+                        <UniversalForm
+                            isSubmit={submitForm}
+                            title={'Заказать peмoнт'}
+                            description={'С Гаpантией дo 3 месяцев!'}
+                            buttonText={'Заказать ремонт'}
+                        />
+                   </div>
+            }
             </ReactModal>
         </div>
     );

@@ -161,7 +161,7 @@
 
 @media screen and (max-width: 420px) {
     .header {
-        padding-bottom: 150px;
+        margin-bottom: 200px;
     }
 
     .hcLeftList ul li {

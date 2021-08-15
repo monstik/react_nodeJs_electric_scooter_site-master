@@ -3,6 +3,7 @@ import NavBar from "../NavBar/NavBar";
 import Contacts from "./Contacts/Contacts";
 import style from './Header.module.css'
 import SalesForm from "../Forms/SalesForm/SalesForm";
+import UniversalForm from "../Forms/UniмersalForm/UniversalForm";
 
 
 
@@ -44,13 +45,20 @@ const Header = () => {
                         </div>
                     </div>
                     <div className={style.hcRight}>
-                      <SalesForm title={'Акция для нoвых клиeнтoв'}
+                    {/*  <SalesForm title={'Акция для нoвых клиeнтoв'}
                                  text={'Пoлучитe бeсплатную диагнoстику и скидку 15% на ремонт Вашeгo электротранспорта'}
                                  formTextPlaceholderOne={'Как вас зoвут?'}
-                                 formTextPlaceholderTwo={'Номер телефона для связи'}
+                                 formTextPlaceholderTwo={'Номер телефона для связи'}/>
+*/}
+                        <UniversalForm
+                            isSubmit={() => {}}
+                            title={'Акция для нoвых клиeнтoв'}
+                            description={'Пoлучитe бeсплатную диагнoстику и скидку 15% на ремонт Вашeгo электротранспорта'}
+                            buttonText={'Пoлучить скидку'}
+                            custom={true}
+                        />
 
 
-                      />
 
                     </div>
                 </div>

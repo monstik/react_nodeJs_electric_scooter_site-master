@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import style from './RepairForm.module.css';
+import style from './UniversalForm.module.css';
 import ContactTypeSelect from "../../conponents/ContactTypeSelect/ContactTypeSelect";
 
 
-const UniversalForm = ({isSubmit}) => {
+const UniversalForm = ({isSubmit, title, description, buttonText, custom}) => {
 
     const [phone, setPhone] = useState('');
     const [name, setName] = useState('');
@@ -82,16 +82,17 @@ const UniversalForm = ({isSubmit}) => {
         }
     }, [nameError, phoneError]);
 
-
     const onSubmitForm = (e) => {
         e.preventDefault();
         if (!formValid) {
             setNameDirty(true);
             setPhoneDirty(true);
+            setFormValid(false);
 
             isSubmit(false);
         } else {
 
+            setFormValid(true);
             isSubmit(true);
         }
 
@@ -102,8 +103,8 @@ const UniversalForm = ({isSubmit}) => {
 
 
         <div className={style.form__block}>
-            <div className={style.form__title}>Заказать peмoнт</div>
-            <div className={style.form__text}>С Гаpантией дo 3 месяцев!</div>
+            <div className={style.form__title + (custom ? ' ' + style.form__title__2 : '')}>{title}</div>
+            <div className={style.form__text + (custom ? ' ' + style.form__text__2 : '')}>{description}</div>
             <form onSubmit={onSubmitForm}>
 
                 <input
@@ -135,11 +136,10 @@ const UniversalForm = ({isSubmit}) => {
                 </div>
                 <ContactTypeSelect/>
                 <button
-
-                    // disabled={!formValid}
                     type="submit"
-
-                    className={style.send__button}>Заказать ремонт
+                    className={style.send__button +  (custom ? ' ' + style.send__button__2 : '')}
+                >
+                    {buttonText}
                 </button>
 
             </form>
