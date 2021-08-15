@@ -61,12 +61,16 @@
     text-transform: uppercase;
     padding: 20px 90px;
     border-radius: 5px;
+    transform: scale(1);
+    transition: 0.3s;
 }
 
 .send__button:hover {
     text-decoration: none;
     color: #FFF;
     background: #f94673;
+    transform: scale(1.05);
+    transition: 0.3s;
 }
 
 

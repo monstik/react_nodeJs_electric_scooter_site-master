@@ -2,12 +2,25 @@ import React, {useState} from 'react';
 import NavBar from "../NavBar/NavBar";
 import Contacts from "./Contacts/Contacts";
 import style from './Header.module.css'
-import SalesForm from "../Forms/SalesForm/SalesForm";
 import UniversalForm from "../Forms/UniмersalForm/UniversalForm";
+import RepairFormModal from "../conponents/RepairFormModal/RepairFormModal";
 
 
 
 const Header = () => {
+
+    const [formSubmit, setFormSubmit] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
+
+
+    const submitForm = (isSubmit) => {
+      setFormSubmit(isSubmit);
+      setModalOpen(isSubmit);
+    };
+
+    const closeModal = () => {
+      setModalOpen(false);
+    }
 
     return (
         <header className={style.header}>
@@ -51,11 +64,16 @@ const Header = () => {
                                  formTextPlaceholderTwo={'Номер телефона для связи'}/>
 */}
                         <UniversalForm
-                            isSubmit={() => {}}
+                            isSubmit={submitForm}
                             title={'Акция для нoвых клиeнтoв'}
                             description={'Пoлучитe бeсплатную диагнoстику и скидку 15% на ремонт Вашeгo электротранспорта'}
                             buttonText={'Пoлучить скидку'}
                             custom={true}
+                        />
+                        <RepairFormModal
+                            formSubmit={formSubmit}
+                            modalIsOpen={modalOpen}
+                            closeModal={closeModal}
                         />
 
 

@@ -96,68 +96,9 @@ a{
     border-radius: 8px;
     padding: 10px 15px 20px 15px;
 
-
-    /*position: relative;*/
-
-    z-index: 6;
-
-    /*margin: 175px 174px 0 0;*/
     color: #FFF;
 }
 
-.map-sotsial {
-
-}
-
-.map-sotsial a {
-    color: #FFF;
-    font-size: 18px;
-    margin-right: 5px;
-}
-
-.map-tell {
-    font-size: 24px;
-    color: #FFF !important;
-    text-decoration: none;
-    display: block;
-    margin-top: 15px;
-}
-
-.map-tell span {
-    font-family: 'ProximaNova-Bold';
-}
-
-.map-mail {
-    font-size: 24px;
-    color: #FFF !important;
-    text-decoration: none;
-    display: block;
-    font-family: 'ProximaNova-Bold';
-    margin-bottom: 20px;
-}
-
-.map-link {
-    display: block;
-    width: 100%;
-    border-radius: 5px;
-    color: #2e2e2e !important;
-    font-size: 14px;
-    font-family: 'ProximaNova-Semibold';
-    text-decoration: none !important;
-    text-transform: uppercase;
-    height: 45px;
-    line-height: 45px;
-    text-align: center;
-    background: #ffffff;
-    letter-spacing: 0.5px;
-    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
-}
-
-.map-link:hover {
-    text-decoration: none !important;
-    color: #FFF !important;
-    background: #f94673;
-}
 .isVisible{
     padding: 0;
     margin: 0;
@@ -205,11 +146,6 @@ a{
         padding-left: 50px;
 
     }
-
-
-}
-
-@media screen and (max-width: 992px) {
 
 
 }

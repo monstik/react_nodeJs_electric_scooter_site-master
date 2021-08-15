@@ -1,18 +1,29 @@
 import React, {useState} from "react";
 import style from './PriceFormBlock.module.css';
 import PriceForm from "../Forms/PriceForm/PriceForm";
+import RepairFormModal from "../conponents/RepairFormModal/RepairFormModal";
 
 const PriceFormBlock = () => {
 
-    const [state, setState] = useState('');
+
+    const [formSubmit, setFormSubmit] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
 
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        console.log('test');
+    const submitForm = (isSubmit) => {
+        setFormSubmit(isSubmit);
+        setModalOpen(isSubmit);
     }
 
+    const closeModal = () => {
+
+        setModalOpen(false);
+
+    }
+
+
     return (
+
         <div className={style.priseForm} id="priceForm">
             <div className="myContainer">
                 <div className={style.pfLeft}>
@@ -26,12 +37,22 @@ const PriceFormBlock = () => {
 
                 </div>
                 <div className={style.pfForm}>
-                   /<PriceForm/>
+                   <PriceForm
+                   isSubmit={submitForm}
+                   />
+                    <RepairFormModal
+                        formSubmit={formSubmit}
+                        modalIsOpen={modalOpen}
+                        closeModal={closeModal}
+
+
+                    />
                 </div>
             </div>
         </div>
 
     );
+
 };
 
 

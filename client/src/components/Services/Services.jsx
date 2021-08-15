@@ -1,58 +1,73 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './Services.module.css';
-
+import {tabs, servicesList} from "./data";
+import {Link} from 'react-scroll'
 
 const Services = (props) => {
+    const [currentTab, setCurrentTab] = useState(0);
+
+    const onTabClick = (e) => {
+        setCurrentTab(e.target.id);
+
+    }
+
     return (
         <div className={style.servis}>
-
             <div className="myContainer" id={'services'}>
-                <div className={style.sectionTitle}>Наши услуги</div>
+                <div className={style.section__title}>Наши услуги</div>
                 <div className={style.servisTab}>
                     <ul className={style.tabs}>
-                        <li className={style.current}><span>Ремонт электросамокатов</span>
-                            <i style={{width: 20, height: 20}} className="bi bi-arrow-right"></i>
-                            </li>
-                        <li><span>Ремонт гиробордов</span><i className="bi bi-arrow-right"></i></li>
-                        <li><span>Ремонт моноколес</span><i className="fa fa-arrow-right"></i></li>
-                        <li><span>Ремонт моноколес</span><i className="fa fa-arrow-right"></i></li>
+                        {tabs.map((value) => {
+                            let current = '';
+                            if (value.id == currentTab) {
+                                current = style.current;
+                            }
+                            return (
+                                <li
+                                    id={value.id}
+                                    onClick={onTabClick}
+                                    className={current}
+                                >
+                                    {value.name}
+                                </li>
+                            );
+                        })}
                     </ul>
-                    <div className="box visible">
-                        <p>Популярные услуги по ремонту электросамокатов</p>
-                        <div className="box-table">
+                    <div className={style.box}>
+                        <p className={style.popular__services}>Популярные услуги по ремонту электросамокатов</p>
+                        <div className={style.box__table}>
                             <table>
-                                <tr>
-                                    <td>Бесплатная диагностика электросамоката. Стоимость диагностики составляет 0
-                                        грн, при
-                                        условии согласия клиента на оплату минимальной стоимости ремонта, которая
-                                        определяется при приеме оборудования
-                                    </td>
-                                    <td>0 грн</td>
-                                </tr>
-                                <tr>
-                                    <td>Ремонт электросамоката 1</td>
-                                    <td> 100 грн</td>
-                                </tr>
-                                <tr>
-                                    <td>Ремонт электросамоката 2</td>
-                                    <td> 200 грн</td>
-                                </tr>
-                                <tr>
-                                    <td>Ремонт электросамоката 3</td>
-                                    <td> 300 грн</td>
-                                </tr>
+                                <tbody>
+                                {servicesList[currentTab].map(value => {
+                                    return (
+                                        <tr className={style.row__style}>
+                                            <td>
+                                                {value.description}
+                                            </td>
+                                            <td>
+                                                {value.prise}
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
+                                </tbody>
                             </table>
                         </div>
-                        <a href="javascript://" data-fancybox="" data-src="#lb-master" className="blue-botton">Моей
+
+
+                        <Link
+                            to='priceForm'
+                            spy={true}
+                            smooth={true}
+                            offset={20}
+                            duration={500}
+                            className="blue-botton">Моей
                             поломки
-                            нет в списке</a>
+                            нет в списке</Link>
                     </div>
                 </div>
             </div>
-            <div className="servis-list">
 
-
-            </div>
         </div>
     );
 };

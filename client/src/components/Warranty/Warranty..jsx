@@ -1,18 +1,26 @@
 import React, {useState} from 'react';
 import style from './Warranty.module.css';
 import ReactModal from "../conponents/ReactModal/ReactModal";
-import RepairForm from "../Forms/RepairForm/RepairForm";
+import UniversalForm from "../Forms/UniмersalForm/UniversalForm";
+import RepairFormModal from "../conponents/RepairFormModal/RepairFormModal";
+
 
 const Warranty = () => {
     const [isModalOpen, setModalState] = useState(false);
+    const [formSubmit, setFormSubmit] = useState(false);
 
     const modalOpen = () => {
         setModalState(true);
+        setFormSubmit(false);
     };
 
     const modalClose = () => {
         setModalState(false);
     };
+
+    const submitForm = (isSubmit) => {
+        setFormSubmit(isSubmit);
+    }
 
     return (
         <div className={style.garantBlock} id="warranty">
@@ -30,10 +38,18 @@ const Warranty = () => {
                     </button>
                 </div>
             </div>
-            <ReactModal isOpen={isModalOpen}
-                        onRequestClose={modalClose} >
-                <RepairForm/>
-            </ReactModal>
+            <RepairFormModal
+                formSubmit={formSubmit}
+                modalIsOpen={isModalOpen}
+                closeModal={modalClose}
+            >
+                <UniversalForm
+                    isSubmit={submitForm}
+                    title={'Заказать peмoнт'}
+                    description={'С Гаpантией дo 3 месяцев!'}
+                    buttonText={'Заказать ремонт'}
+                />
+            </RepairFormModal>
         </div>
 
     );

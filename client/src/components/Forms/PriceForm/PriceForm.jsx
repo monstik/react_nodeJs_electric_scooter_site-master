@@ -3,7 +3,7 @@ import style from "./PriceForm.module.css";
 import ContactTypeSelect from "../../conponents/ContactTypeSelect/ContactTypeSelect";
 
 
-const PriceForm = () => {
+const PriceForm = ({isSubmit}) => {
         const [text, setText] = useState('');
         const [phone, setPhone] = useState('');
         const [contactType, setContactType] = useState(0);
@@ -62,7 +62,7 @@ const PriceForm = () => {
             }
 
         };
-        const contactTypeHandler = (state) =>{
+        const contactTypeHandler = (state) => {
             console.log(state);
             setContactType(state);
         }
@@ -72,23 +72,30 @@ const PriceForm = () => {
             }
         };
 
-    useEffect(() => {
-        if (phoneError || textError) {
-            setFormValid(false);
-        } else {
-            setFormValid(true);
-        }
-    }, [textError, phoneError]);
+        useEffect(() => {
+            if (phoneError || textError) {
+                setFormValid(false);
+            } else {
+                setFormValid(true);
+            }
+        }, [textError, phoneError]);
 
         const submitForm = (e) => {
             e.preventDefault();
-            if (phoneError || textError) {
+            if (!formValid) {
                 setTextDirty(true);
                 setPhoneDirty(true);
+                isSubmit(false);
+            } else {
 
-
-            }else {
-                setFormValid(true);
+                setFormValid(false);
+                setText('');
+                setPhone('');
+                setTextDirty(false);
+                setPhoneDirty(false);
+                setTextError('Это поле не может быть пустым')
+                setPhoneError('Это поле не может быть пустым')
+                isSubmit(true);
             }
         };
 

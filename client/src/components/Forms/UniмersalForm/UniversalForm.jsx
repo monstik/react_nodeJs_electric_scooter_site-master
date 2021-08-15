@@ -32,7 +32,7 @@ const UniversalForm = ({isSubmit, title, description, buttonText, custom}) => {
         const regV2 = /^[ \s]+|[ \s]+$/g;
         setName(e.target.value);
         if (e.target.value.length > 0) {
-            if(regV2.test(String(e.target.value))){
+            if (regV2.test(String(e.target.value))) {
                 setNameError('Уберите пробелы в начале или конце строки')
             } else {
                 if (!regV.test(String(e.target.value))) {
@@ -87,12 +87,15 @@ const UniversalForm = ({isSubmit, title, description, buttonText, custom}) => {
         if (!formValid) {
             setNameDirty(true);
             setPhoneDirty(true);
-            setFormValid(false);
-
             isSubmit(false);
         } else {
-
-            setFormValid(true);
+            setFormValid(false);
+            setName('');
+            setPhone('');
+            setNameDirty(false);
+            setPhoneDirty(false);
+            setNameError('Это поле не может быть пустым')
+            setPhoneError('Это поле не может быть пустым')
             isSubmit(true);
         }
 
@@ -137,7 +140,7 @@ const UniversalForm = ({isSubmit, title, description, buttonText, custom}) => {
                 <ContactTypeSelect/>
                 <button
                     type="submit"
-                    className={style.send__button +  (custom ? ' ' + style.send__button__2 : '')}
+                    className={style.send__button + (custom ? ' ' + style.send__button__2 : '')}
                 >
                     {buttonText}
                 </button>

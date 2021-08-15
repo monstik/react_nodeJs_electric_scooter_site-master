@@ -23,12 +23,11 @@ function App() {
             <Warranty/>
             <FeedBack/>
             {/*пока нету интернета можно выключать гугл карту */}
-            {/*<MapBlock/>*/}
-
+            <MapBlock/>
             <Footer/>
 
-            <a href="javascript://" data-fancybox="" data-src="#lb-thank" className="thank-link">11</a>
-            <div >
+
+
 
 
 {/*
@@ -73,7 +72,7 @@ function App() {
                     </div>
                 </div>
             </div>*/}
-                </div>
+
         </>
     );
 }

@@ -5,7 +5,7 @@ const ServisOrder = () => {
     return(
     <div className={style.servisOrder} id={'section2'}>
         <div className="myContainer">
-            <div className={style.sectionTitle}>Как получить быстрый ремонт электротранспорта</div>
+            <div className={style.section__title}>Как получить быстрый ремонт электротранспорта</div>
             <div className={style.soList}>
                 <div className={style.soItem}>
                     <div className={style.soItemNum}>01</div>

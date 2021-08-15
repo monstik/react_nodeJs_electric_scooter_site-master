@@ -76,8 +76,6 @@
 
 }
 
-
-
 .descriptionText {
     font-size: 14px;
     display: inline-block;
@@ -114,10 +112,6 @@
 }
 
 @media screen and (max-width: 520px) {
-    .test {
-        margin: 0 8px 0 7px;
-    }
-
     .form__container{
         width: auto;
     }

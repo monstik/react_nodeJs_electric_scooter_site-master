@@ -30,7 +30,7 @@ const InformBlock = (props) => {
                         <div className={style.title}>Телефон</div>
                         <div className={style.description}><a className={style.descriptionPhone}
                                                               href={'tel:+380995165196'}>+380995165196</a></div>
-                    </li>т
+                    </li>
                     <li className={style.contactInformationItem}>
                         <img className={style.icon} src="./images/emailIcon.png" alt="man"/>
                         <div className={style.title}>Email</div>

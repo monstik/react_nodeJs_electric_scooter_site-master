@@ -1,11 +1,8 @@
 import React, {useState} from "react";
 import style from './Contact.module.css';
-import ReactModal from "../../conponents/ReactModal/ReactModal";
-import SalesForm from "../../Forms/SalesForm/SalesForm";
 import Button from "../../conponents/Button/Button";
-import RepairForm from "../../Forms/RepairForm/RepairForm";
-import SubmitFormSuccess from "../../conponents/SubmitFormSuccess/SubmitFormSuccess";
 import UniversalForm from "../../Forms/UniмersalForm/UniversalForm";
+import RepairFormModal from "../../conponents/RepairFormModal/RepairFormModal";
 
 
 const Contacts = (props) => {
@@ -59,24 +56,23 @@ const Contacts = (props) => {
                     </div>
                 </div>
             </div>
-            <ReactModal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}>
 
-                {formSubmit ?
-                    <SubmitFormSuccess/> :
-                    <div className={style.form__container}>
+                <RepairFormModal
+                    modalIsOpen={modalIsOpen}
+                    closeModal={closeModal}
+                    formSubmit={formSubmit}
+                    >
+                    <UniversalForm
+                        isSubmit={submitForm}
+                        title={'Заказать peмoнт'}
+                        description={'С Гаpантией дo 3 месяцев!'}
+                        buttonText={'Заказать ремонт'}
+                    />
+                </RepairFormModal>
 
 
-                        <UniversalForm
-                            isSubmit={submitForm}
-                            title={'Заказать peмoнт'}
-                            description={'С Гаpантией дo 3 месяцев!'}
-                            buttonText={'Заказать ремонт'}
-                        />
-                   </div>
-            }
-            </ReactModal>
+
+
         </div>
     );
 
