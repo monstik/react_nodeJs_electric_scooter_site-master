@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import ReactModal from "../ReactModal/ReactModal";
 import SubmitFormSuccess from "../SubmitFormSuccess/SubmitFormSuccess";
 import style from './RepairFormModal.module.css';
 
 
 const RepairFormModal = ({modalIsOpen, closeModal, formSubmit, children }) => {
+
+   // const [closeModal, setCloseModal] = useState(modalIsOpen);
+
 
 
     return (
@@ -14,7 +17,7 @@ const RepairFormModal = ({modalIsOpen, closeModal, formSubmit, children }) => {
             onRequestClose={closeModal}>
 
             {formSubmit ?
-                <SubmitFormSuccess/> :
+                <SubmitFormSuccess close={closeModal}/> :
                 <div className={style.form__container}>
                     {children}
                 </div>
