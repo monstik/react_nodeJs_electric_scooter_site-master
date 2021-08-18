@@ -63,7 +63,6 @@ const PriceForm = ({isSubmit}) => {
 
         };
         const contactTypeHandler = (state) => {
-            console.log(state);
             setContactType(state);
         }
         const onPhoneClick = () => {
