@@ -25,7 +25,7 @@ const Header = () => {
     return (
         <header className={style.header}>
             <NavBar/>
-            <Contacts phoneNumber='+380995165196' logoImg={'images/logo.png'}/>
+            <Contacts phoneNumber='+380995165197' logoImg={'images/logo.png'}/>
             <div className={style.headerContent}>
                 <div className="myContainer">
                     <div className={style.hcLeft}>
