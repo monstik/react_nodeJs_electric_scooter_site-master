@@ -18,7 +18,7 @@ class MailService {
         })
     }
 
-    async sendFormOnMail(name, phoneNumber){
+    async sendUniversalFormOnEmail(name, phoneNumber, contactType){
         try {
 
             await this.transporter.sendMail({
@@ -35,6 +35,21 @@ class MailService {
         }
 
 
+    }
+
+    async sendPriceFormOnMail(text, phoneNumber, contactType){
+        try{
+            await this.transporter.sendMail({
+                from: process.env.SMTP_USER,
+                to: process.env.SMTP_USER,
+                subject: 'заявка на стоимость',
+                text: 'заявка на ремонт от ' + phoneNumber + ' ' + text,
+                html:''
+            })
+        }catch (e){
+            console.log('error');
+            console.log(e);
+        }
     }
 }
 

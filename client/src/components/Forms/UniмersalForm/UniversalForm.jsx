@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import style from './UniversalForm.module.css';
 import ContactTypeSelect from "../../conponents/ContactTypeSelect/ContactTypeSelect";
+import axios from "axios";
 
 
 const UniversalForm = ({isSubmit, title, description, buttonText, custom}) => {
@@ -8,6 +9,8 @@ const UniversalForm = ({isSubmit, title, description, buttonText, custom}) => {
     const [phone, setPhone] = useState('');
     const [name, setName] = useState('');
     const [formValid, setFormValid] = useState(false);
+    const [contactType, setContactType] = useState(0);
+
 
     const [phoneDirty, setPhoneDirty] = useState(false);
     const [nameDirty, setNameDirty] = useState(false);
@@ -68,6 +71,11 @@ const UniversalForm = ({isSubmit, title, description, buttonText, custom}) => {
 
     }
 
+    const contactTypeHandler = (state) => {
+
+        setContactType(state);
+    }
+
     const onPhoneClick = () => {
         if (!phone) {
             setPhone('+380');
@@ -89,6 +97,7 @@ const UniversalForm = ({isSubmit, title, description, buttonText, custom}) => {
             setPhoneDirty(true);
             isSubmit(false);
         } else {
+
             setFormValid(false);
             setName('');
             setPhone('');
@@ -96,60 +105,78 @@ const UniversalForm = ({isSubmit, title, description, buttonText, custom}) => {
             setPhoneDirty(false);
             setNameError('Это поле не может быть пустым')
             setPhoneError('Это поле не может быть пустым')
+            response()
             isSubmit(true);
         }
 
     }
 
+    const response = useCallback(() => {
+        const formObject = {
+            name: name,
+            phone: phone,
+            contactType: contactType
+        }
 
-    return (
+        // axios.post(`http://localhost:5000/api/postForm`)
 
-
-        <div className={style.form__block}>
-            <div className={style.form__title + (custom ? ' ' + style.form__title__2 : '')}>{title}</div>
-            <div className={style.form__text + (custom ? ' ' + style.form__text__2 : '')}>{description}</div>
-            <form onSubmit={onSubmitForm}>
-
-                <input
-                    value={name}
-                    onBlur={e => blurHandler(e)}
-                    onChange={e => nameHandler(e)}
-                    type="text"
-                    placeholder="Как вас зoвут?"
-                    name="name"/>
-                <div className={style.validation__field}>
-                    {(nameDirty && nameError) && <label>
-                        {nameError}
-                    </label>}
-                </div>
+        console.log(formObject);
+    },[name, phone, contactType]);
 
 
-                <input
-                    value={phone}
-                    onBlur={e => blurHandler(e)}
-                    onChange={e => phoneHandler(e)}
-                    onClick={onPhoneClick}
-                    type="tel"
-                    placeholder="Номер телефона для связи"
-                    name="phone"/>
-                <div className={style.validation__field}>
-                    {(phoneDirty && phoneError) && <label>
-                        {phoneError}
-                    </label>}
-                </div>
-                <ContactTypeSelect/>
-                <button
-                    type="submit"
-                    className={style.send__button + (custom ? ' ' + style.send__button__2 : '')}
-                >
-                    {buttonText}
-                </button>
 
-            </form>
-        </div>
 
-    );
-};
+
+
+return (
+
+
+    <div className={style.form__block}>
+        <div className={style.form__title + (custom ? ' ' + style.form__title__2 : '')}>{title}</div>
+        <div className={style.form__text + (custom ? ' ' + style.form__text__2 : '')}>{description}</div>
+        <form onSubmit={onSubmitForm}>
+
+            <input
+                value={name}
+                onBlur={e => blurHandler(e)}
+                onChange={e => nameHandler(e)}
+                type="text"
+                placeholder="Как вас зoвут?"
+                name="name"/>
+            <div className={style.validation__field}>
+                {(nameDirty && nameError) && <label>
+                    {nameError}
+                </label>}
+            </div>
+
+
+            <input
+                value={phone}
+                onBlur={e => blurHandler(e)}
+                onChange={e => phoneHandler(e)}
+                onClick={onPhoneClick}
+                type="tel"
+                placeholder="Номер телефона для связи"
+                name="phone"/>
+            <div className={style.validation__field}>
+                {(phoneDirty && phoneError) && <label>
+                    {phoneError}
+                </label>}
+            </div>
+            <ContactTypeSelect onChange={contactTypeHandler}/>
+            <button
+                type="submit"
+                className={style.send__button + (custom ? ' ' + style.send__button__2 : '')}
+            >
+                {buttonText}
+            </button>
+
+        </form>
+    </div>
+
+);
+}
+;
 
 
 export default UniversalForm;

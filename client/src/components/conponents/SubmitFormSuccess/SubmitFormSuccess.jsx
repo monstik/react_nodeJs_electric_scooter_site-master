@@ -3,13 +3,8 @@ import style from './SubmirFormSuccess.module.css'
 
 const SubmitFormSuccess = ({close}) =>{
 
-
-
-
-
     useEffect(() => {
-        setTimeout(() => close(false), 1500);
-        console.log('test', close);
+        setTimeout(() => close(false), 7000);
     })
 
     return(
